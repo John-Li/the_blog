@@ -1,4 +1,11 @@
 TheBlog::Application.routes.draw do
+
+  root to: 'static_pages#home'
+
+  resources :posts do
+    resources :comments
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

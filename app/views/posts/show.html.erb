@@ -1,0 +1,20 @@
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<br />
+
+<%= link_to 'Back', posts_path %> |
+<%= link_to 'Edit', edit_post_path %> |
+<%= link_to 'Delete', @post, confirm: 'Are You shure?', method: :delete %>
