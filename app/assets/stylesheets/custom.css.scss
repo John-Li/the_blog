@@ -1,0 +1,77 @@
+$link-color: #09c;
+$visited-link-color: #069;
+
+.container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+
+	a#enter {
+		text-align: center;
+	}
+}
+
+/* Header */
+
+header {
+	h1 {
+		display: inline;
+	}
+}
+/* Links */
+
+a {
+	color: $link-color;
+
+	&:visited {
+		color: $visited-link-color;
+	}
+}
+
+/* Navigation */
+
+nav {
+	float: right;
+	padding: 0 1em;
+	background-color: #DDD;
+
+	ul {
+		margin: 2px 0px;
+		padding: 0;
+
+		li {
+		font-size: 18px;
+		list-style-type: none;
+		display: inline;
+
+			a {
+				padding: 0px 5px;
+				color : $link-color;
+				text-decoration: none;
+				font-weight: bold;
+
+				&:visited {
+					color: $link-color;
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+	
+/* Footer */
+
+footer {
+	margin-top: 10px;
+	text-align: center;
+
+	nav {
+		float: none;
+	}
+}
