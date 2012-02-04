@@ -9,7 +9,7 @@ $visited-link-color: #069;
 
 section {
 
-	a#enter {
+	p#enter {
 		text-align: center;
 	}
 }
@@ -73,5 +73,30 @@ footer {
 
 	nav {
 		float: none;
+	}
+}
+
+#error_explanation {
+	width: 450px;
+	border: 1px solid red;
+	padding: 5px;
+	padding-bottom: 0;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+
+	h2 {
+		text-align: left;
+		font-weight: bold;
+		padding: 5px 5px 5px 15px;
+		font-size: 12px;
+		margin: -7px;
+		margin-bottom: 0px;
+		background-color: #c00;
+		color: #fff;
+	}
+
+	ul li {
+		font-size: 12px;
+		list-style-type: square;
 	}
 }
