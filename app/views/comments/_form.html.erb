@@ -1,10 +1,10 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<%= form_for([@post, @comment]) do |f| %>
 	
-	<% if @post.comments.build.errors.any? %>
+	<% if @comment.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@post.comments.build.errors.count, "error")%> prohibited this comment from beign saved:</h2>
+			<h2><%= pluralize(@comment.errors.count, "error")%> prohibited this comment from beign saved:</h2>
 			<ul>
-				<% @post.comments.build.errors.full_messages.each do |msg| %>
+				<% @comment.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
 				<% end %>
 			</ul>
