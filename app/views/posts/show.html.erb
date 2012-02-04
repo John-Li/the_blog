@@ -13,6 +13,16 @@
   <%= @post.content %>
 </p>
 
+<h2>Comments</h2>
+<% if @post.comments.any? %>
+	<%= render @post.comments %>
+<% else %>
+	<p>There are no comments yet.</p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
 <br />
 
 <%= link_to 'Back', posts_path %> |
