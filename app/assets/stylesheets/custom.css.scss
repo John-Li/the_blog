@@ -100,3 +100,26 @@ footer {
 		list-style-type: square;
 	}
 }
+
+/* User show page */
+
+table.profile {
+	width: 100%;
+	margin-bottom: 0;
+
+	img.gravatar {
+		margin-bottom: -30px;
+	}
+
+	td.main {
+		width: 70%;
+		padding: 1em;
+	}
+
+	td.sidebar {
+		width: 30%;
+		padding: 1em;
+		vertical-align: top;
+		background-color: #ffc;
+	}
+}

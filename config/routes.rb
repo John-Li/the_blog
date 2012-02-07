@@ -1,6 +1,9 @@
 TheBlog::Application.routes.draw do
 
   root to: 'static_pages#home'
+  match '/signup'  => 'users#new'
+
+  resources :users
 
   resources :posts do
     resources :comments
