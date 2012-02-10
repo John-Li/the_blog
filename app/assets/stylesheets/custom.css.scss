@@ -123,3 +123,14 @@ table.profile {
 		background-color: #ffc;
 	}
 }
+
+/* Flash messages */
+
+.flash {
+  font-size: 120%;
+  color: white;
+  padding: 0.5em;
+  background-color: red;
+  border: 1px solid black;
+  margin: 1em;
+}

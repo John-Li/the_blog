@@ -1,10 +1,13 @@
 TheBlog::Application.routes.draw do
 
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
   root to: 'static_pages#home'
   match '/signup'  => 'users#new'
-
-  resources :users
-
+  match '/signin'  => 'sessions#new'
+  match '/signout' => 'sessions#destroy'
+  
   resources :posts do
     resources :comments
   end
