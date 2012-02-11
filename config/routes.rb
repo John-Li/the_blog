@@ -1,5 +1,6 @@
 TheBlog::Application.routes.draw do
 
+  resources :categories
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -7,11 +8,11 @@ TheBlog::Application.routes.draw do
   match '/signup'  => 'users#new'
   match '/signin'  => 'sessions#new'
   match '/signout' => 'sessions#destroy'
-  
+
   resources :posts do
     resources :comments
   end
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

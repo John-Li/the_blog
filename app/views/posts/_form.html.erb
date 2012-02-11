@@ -24,6 +24,12 @@
 		<%= f.text_area :content %>
 	</div>
 	<div>
+    <%= label_tag 'Categories'%><br />
+    <%= collection_select(:post, :category_id, Category.all, :id, :name)  %>
+    <%= link_to 'Add category', new_category_path %>
+	</div>
+  <br />
+	<div>
 		<%= f.submit %>
 	</div>
 <% end %>

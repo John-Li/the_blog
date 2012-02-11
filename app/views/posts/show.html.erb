@@ -12,6 +12,12 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<% if @post.category%>
+  <p>
+    <b>Category:</b>
+    <%= @post.category.name %>
+  </p>
+<% end %>
 
 <h2>Comments</h2>
 <% if @post.comments.any? %>
