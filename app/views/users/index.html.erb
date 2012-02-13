@@ -1,0 +1,17 @@
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<% @users.each do |user| %>
+  <ul class="users">
+    <li>
+      <%= gravatar_for(user, size: 30)%>
+      <%= link_to user.name, user %>
+      <% if current_user.admin? && !current_user?(user) %>
+        | <%= link_to 'delete', user, method: :delete, confirm: "You shure?x"%>
+      <% end %>
+    </li>
+  </ul>
+<% end%>
+
+<%= will_paginate %>
