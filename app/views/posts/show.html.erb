@@ -1,6 +1,6 @@
 <p>
-  <b>Name:</b>
-  <%= @post.name %>
+  <b>Author:</b>
+  <%= link_to @post.user.name, @post.user %>
 </p>
 
 <p>
@@ -19,8 +19,8 @@
   </p>
 <% end %>
 
-<h2>Comments</h2>
 <% if @post.comments.any? %>
+  <h2>Comments</h2>
 	<%= render Comment.where(:post_id => @post.id) %>
 <% else %>
 	<p>There are no comments yet.</p>
@@ -31,6 +31,4 @@
 
 <br />
 
-<%= link_to 'Back', posts_path %> |
-<%= link_to 'Edit', edit_post_path %> |
-<%= link_to 'Delete', @post, confirm: 'Are You shure?', method: :delete %>
+<%= link_to 'Back', posts_path %>

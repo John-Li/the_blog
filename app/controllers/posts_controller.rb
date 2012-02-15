@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_filter :signed_in_user, except: [:index, :show]
 
-	def index
+	def index  
 		@posts = Post.all
 	end
 
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		@post = current_user.posts.build
 	end
 
 	def edit
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(params[:post])
+		@post = current_user.posts.build(params[:post])
 	
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.' 
@@ -31,25 +32,18 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 
-		respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update_attributes(params[:post])
+      redirect_to @post, notice: 'Post was successfully updated.'
+    else
+      render :edit
     end
 	end
 
 	def destroy
 		@post = Post.find(params[:id])
+    @user = @post.user
 		@post.destroy
-
-		respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
-    end
+    redirect_to @user
 	end	
 
 end

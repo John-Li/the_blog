@@ -1,23 +1,25 @@
 <h1>All Posts</h1>
 
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Title</th>
-		<th>Content</th>
-	</tr>
+<% if @posts.empty? %>
+  <h2>There are no posts yet. Please create one!</h2>
+<% else %>
+  <table>
+  	<tr>
+  		<th>Author</th>
+  		<th>Title</th>
+  		<th>Content</th>
+  	</tr>
 
-<% @posts.each do |post| %>
-	<tr>
-		<td><%= post.name %></td>
-		<td><%= post.title %></td>
-		<td><%= post.content%></td>
-		<td><%= link_to 'Show', post %></td>
-		<td><%= link_to 'Edit', edit_post_path(post) %></td>
-		<td><%= link_to 'Delete', post, confirm: 'Are You shure?', method: :delete %></td>
-	</tr>
-	<% end %>
-</table>
+  <% @posts.each do |post| %>
+  	<tr>
+  		<td><%= link_to post.user.name, post.user %></td>
+  		<td><%= post.title %></td>
+  		<td><%= post.content%></td>
+  		<td><%= link_to 'Show', post %></td>
+  	</tr>
+  	<% end %>
+  </table>
+<% end %>
 
 <br />
 
