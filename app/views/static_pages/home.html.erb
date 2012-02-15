@@ -1,5 +1,8 @@
-<p>Please feel confortable to post any information You find interesting.</p>
-<p>To be an author of a new post please <%= link_to "sign up", signup_path%>.</p>
+<p>Please feel confortable <%= link_to 'to post', new_post_path %> any information You find interesting.</p>
+
+<% unless signed_in? %>
+	<p>To be an author of a new post please <%= link_to "sign up", signup_path%>.</p>
+<% end %>
 
 <br />
 
