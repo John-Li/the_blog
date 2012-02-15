@@ -1,9 +1,9 @@
-<p>Please feel confortable <%= link_to 'to post', new_post_path %> any information You find interesting.</p>
-
-<% unless signed_in? %>
-	<p>To be an author of a new post please <%= link_to "sign up", signup_path%>.</p>
+<% if signed_in? %>
+  <%= redirect_to posts_path %>
+<% else %>
+  <div class="default_home">
+    <p>Please feel confortable to post any information You find interesting.</p>
+    <p>To be an author of a new post please <%= link_to "sign up", signup_path%>.</p>
+    <p><%= link_to 'View all posts', posts_path %></p>
+  </div>
 <% end %>
-
-<br />
-
-<p id="enter"><%= link_to 'View all posts', posts_path %></p>
