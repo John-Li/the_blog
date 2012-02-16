@@ -1,24 +1,21 @@
 <h1>All Posts</h1>
-
+<br />
 <% if @posts.empty? %>
   <h2>There are no posts yet. Please <%= link_to 'create', new_post_path %> one!</h2>
 <% else %>
-  <table>
-  <% @posts.each do |post| %>
-  	<tr>
-  		<td>Author: <%= link_to post.user.name, post.user %></td>
-    </tr>
-    <tr>
-      <td>Title: <%= link_to post.title, post %></td>
-    </tr>
-    <tr>
-      <td><%= post.content%></td>
-    </tr>
-    <tr>
-      <td>Posted: <%= post.created_at %></td>
-      <td><%= link_to 'Detailed', post %></td>
-      <td><%= link_to 'Comment', post %></td>
-    </tr> 
-  	<% end %>
-  </table>
+  <div class="row">
+    <% @posts.each do |post| %>
+    <div class="span12">
+      <h1>Author: <%= link_to post.user.name, post.user %></h1>
+      <h1>Title: <%= link_to post.title, post %></h1>
+      <p><%= post.content%></p>
+      <h6>
+        Posted: <%= post.created_at %>
+        <%= link_to 'Detailed ', post %>
+        <%= link_to 'Comment ', post %>
+      </h6><br />
+    </div>
+    <% end %>
+  </div> 	
 <% end %>
+

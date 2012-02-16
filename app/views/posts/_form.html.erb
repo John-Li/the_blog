@@ -3,17 +3,17 @@
 	<%= render 'shared/error_messages', object: f.object %>
 
 	<div>
-		<%= f.label :title %><br />
+		<%= f.label :title %>
 		<%= f.text_field :title %>
 	</div>
 	<div>
-		<%= f.label :content %><br />
+		<%= f.label :content %>
 		<%= f.text_area :content %>
 	</div>
 	<div>
-    <%= label_tag 'Categories'%><br />
-    <%= collection_select(:post, :category_id, Category.all, :id, :name)  %>
-    <%= link_to 'Add category', new_category_path %>
+    <%= label_tag 'Categories'%>
+    <%= collection_select(:post, :category_id, Category.all, :id, :name)  %><br />
+    <%= link_to 'Add category', new_category_path, class: "btn" %>
 	</div>
   <br />
 	<div>

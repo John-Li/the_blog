@@ -3,7 +3,7 @@
     <h1>
       <%= gravatar_for @user, size: 30 %>
       <%= @user.name %>
-    </h1>
+    </h1><br />
     <% if @user.posts.any? %>
       <%= render @posts %>
     <% end %>

@@ -1,17 +1,7 @@
-<p>
-  <b>Author:</b>
-  <%= link_to @post.user.name, @post.user %>
-</p>
+<h1>Author: <%= link_to @post.user.name, @post.user %></h1>
+<h1>Title: <%= @post.title %></h1>
+<p><%= @post.content %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
 <% if @post.category%>
   <p>
     <b>Category:</b>
@@ -26,9 +16,7 @@
 	<p>There are no comments yet.</p>
 <% end %>
 
-<h2>Add a comment:</h2>
+<h3>Add a comment:</h3>
 <%= render "comments/form" %>
 
-<br />
-
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path, class: "btn" %>
