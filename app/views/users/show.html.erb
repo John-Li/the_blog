@@ -13,7 +13,9 @@
     <strong>Name</strong> <%= @user.name %><br />
     <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
     <strong>Posts</strong> <%= @user.posts.count %><br />
-    <strong><%= link_to 'Settings', edit_user_path %></strong><br />
-    <strong><%= link_to 'New Post', new_post_path %></strong>
+    <% if current_user?(@user) %>
+      <strong><%= link_to 'Settings', edit_user_path %></strong><br />
+      <strong><%= link_to 'New Post', new_post_path %></strong>
+    <% end %>
   </div>
 </div>

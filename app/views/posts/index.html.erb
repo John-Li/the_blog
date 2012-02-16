@@ -6,8 +6,8 @@
   <div class="row">
     <% @posts.each do |post| %>
     <div class="span12">
-      <h1>Author: <%= link_to post.user.name, post.user %></h1>
-      <h1>Title: <%= link_to post.title, post %></h1>
+      <h2>Author: <%= link_to post.user.name, post.user %></h2>
+      <h2>Title: <%= link_to post.title, post %></h2>
       <p><%= post.content%></p>
       <h6>
         Posted: <%= post.created_at %>
