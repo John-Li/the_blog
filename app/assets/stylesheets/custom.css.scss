@@ -19,6 +19,15 @@ section {
 header {
 	h1 {
 		display: inline;
+
+		a {
+			color: black;
+			text-decoration: none;
+
+			&:visited {
+				color: black;
+			}
+		}
 	}
 }
 /* Links */
@@ -73,6 +82,12 @@ footer {
 
 	nav {
 		float: none;
+	}
+
+	p {
+		font-size: 18px;
+		color: $link-color;
+		font-weight: bold;
 	}
 }
 
