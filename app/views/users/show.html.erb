@@ -1,24 +1,19 @@
-<table class="profile">
-  <tr>
-    <td class="main">
-      <h1>
-        <%= gravatar_for @user, size: 30 %>
-        <%= @user.name %>
-      </h1>
-      <% if @user.posts.any? %>
-        <table class="posts">
-          <%= render @posts %>
-        </table>
-        <%= will_paginate @posts%>
-      <% end %>
-
-    </td>
-    <td class="sidebar">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-      <strong>Posts</strong> <%= @user.posts.count %><br />
-      <strong><%= link_to 'Settings', edit_user_path %></strong><br />
-      <strong><%= link_to 'New Post', new_post_path %></strong>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div class="span9">
+    <h1>
+      <%= gravatar_for @user, size: 30 %>
+      <%= @user.name %>
+    </h1>
+    <% if @user.posts.any? %>
+      <%= render @posts %>
+    <% end %>
+    <%= will_paginate @posts %>
+  </div>
+  <div class="span2 offset1 well">
+    <strong>Name</strong> <%= @user.name %><br />
+    <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+    <strong>Posts</strong> <%= @user.posts.count %><br />
+    <strong><%= link_to 'Settings', edit_user_path %></strong><br />
+    <strong><%= link_to 'New Post', new_post_path %></strong>
+  </div>
+</div>

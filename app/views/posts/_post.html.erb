@@ -1,13 +1,13 @@
-<tr>
-  <td class="micropost">
-    <span class="title"><%= post.title %></span><br />
-    <span class="content"><%= post.content %></span><br />
-    <span class="timestamp">Posted <%= post.created_at%></span>
-  </td>	
-  <% if current_user?(post.user) %>
-  <td>
-    <%= link_to 'edit', edit_post_path(post) %>
-    <%= link_to 'delete', post, method: :delete, confirm: "You shure?"%>
-  </td>
-  <% end %>
-</tr>
+<div class="row">
+  <div class="span9">
+    <h2><%= post.title %></h2><br />
+    <p><%= post.content %></p><br />
+    <p>
+      Posted <%= post.created_at%>
+      <% if current_user?(post.user) %>
+        <%= link_to 'edit', edit_post_path(post) %>
+        <%= link_to 'delete', post, method: :delete, confirm: "You shure?"%>
+      <% end %>
+    </p>
+  </div>
+</div>
